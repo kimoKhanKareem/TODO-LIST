@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import styled from 'styled-components';
 import { DataContext } from '../DataContext/DataContext';
 import ListItem from './ListItem'
 
@@ -6,14 +7,17 @@ const List = () => {
     const {todos} = useContext(DataContext);
     // console.log("todos",todos)
     return (
-        <ul>
+        <ListStyled>
             {
                 todos.map((todo, index) => (
                     <ListItem todo={todo} key={index} />
                 ))
             }
-        </ul>
+        </ListStyled>
     )
 }
-
+//styled components
+const ListStyled = styled.ul`
+list-style: none;
+`
 export default List
