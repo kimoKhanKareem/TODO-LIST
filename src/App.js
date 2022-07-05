@@ -23,5 +23,13 @@ function App() {
 }
 //styled components
 const Div = styled.div`
+width: 100%;
+max-width: 500px;
+box-shadow: 0 2px 6px #555;
+margin: 10% auto;
+padding: 1% ;
+h1{
+  color: #555;
+}
 `
 export default App;

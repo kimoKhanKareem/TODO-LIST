@@ -1,17 +1,27 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-    const [todos, setTodos] = useState([])
     const [todoName, setTodoName] = useState('');
+    const [todos,setTodos] = useState([]);
 
-    const AddTodo = e =>{
+    useEffect(() => {
+        const todoStore = JSON.parse(localStorage.getItem('todoStore'))
+        if(todoStore) setTodos(todoStore)
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('todoStore', JSON.stringify(todos))
+    }, [todos]);
+
+
+    const AddTodo = (e)=>{
         e.preventDefault();
         setTodos([...todos, {name:todoName, complete: false}])
-        setTodoName('');
+        // setTodoName('')
     }
 
-
-    return <DataContext.Provider value={{ todos, todoName, setTodoName, AddTodo }}>{children}</DataContext.Provider>
+    return <DataContext.Provider value={{ todoName, setTodoName, todos, setTodos, AddTodo }}>{children}</DataContext.Provider>
+    
 }
