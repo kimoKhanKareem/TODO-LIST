@@ -25,20 +25,3 @@ list-style: none;
 padding: 0 40px;
 `
 export default List
-
-
-
-
-
-// import React, { useContext } from 'react'
-// import { DataContext } from '../DataContext/DataContext';
-
-// const {todos} = useContext(DataContext);
-
-/* <ListStyled>
-    {!todos.length?<p>Please add something in the input</p>:
-        todos.map((todo, index) => (
-            <ListItem todo={todo} key={index} />
-        ))
-    }
-</ListStyled> */

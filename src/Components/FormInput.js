@@ -36,16 +36,3 @@ width: 100%;
     }
 `
 export default FormInput
-
-
-// import React, {useContext} from 'react'
-// import { DataContext } from '../DataContext/DataContext';
-
-// const { setTodoName, todoName, AddTodo }= useContext(DataContext);
-
-        /* <Form autoComplete="off" onSubmit={AddTodo}>
-            <input type="text" name="todos" id="todos"  required  placeholder='What need to be done?' value={todoName}
-             onChange={e=> setTodoName(e.target.value.toLowerCase())} />
-            <button type="submit">Create</button>
-        </Form>
- */

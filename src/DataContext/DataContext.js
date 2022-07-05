@@ -19,7 +19,7 @@ export const DataProvider = ({ children }) => {
     const AddTodo = (e)=>{
         e.preventDefault();
         setTodos([...todos, {name:todoName, complete: false}])
-        // setTodoName('')
+        setTodoName('')
     }
 
     return <DataContext.Provider value={{ todoName, setTodoName, todos, setTodos, AddTodo }}>{children}</DataContext.Provider>
