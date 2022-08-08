@@ -32,7 +32,6 @@ const FooterStyled = styled.footer`
         cursor: pointer;
         padding: 5px;
     }
-
 `
 
 export default Footer

@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ListItem = ({todo, id}) => {
+const ListItem = ({todo, id, checkComplete}) => {
     return (
         <ListItemStyled>
-            <label htmlFor={id}>
-                <input type="checkbox" id={id}/>
-                {todo.name}
+            <label htmlFor={id} >
+                <input type="checkbox" id={id} checked={todo.complete}
+                    onChange={() =>checkComplete(id)} 
+                />
+                <div className={todo.complete ? "active": ''}>{todo.name}</div>
             </label>
-                <button>Edit</button>
+                <button disabled={todo.complete}>Edit</button>
         </ListItemStyled>
     )
 }

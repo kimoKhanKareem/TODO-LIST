@@ -7,7 +7,8 @@ const FormInput = () => {
     
     return (
         <Form autoComplete="off" onSubmit={AddTodo}>
-            <input type="text" name="todos" id="todos" required  placeholder='What need to be done?' value={todoName}
+            <input type="text" name="todos" id="todos" required
+             placeholder='What need to be done?' value={todoName}
                 onChange={e=> setTodoName(e.target.value.toLowerCase())}
             />
             <button type="submit">Create</button>

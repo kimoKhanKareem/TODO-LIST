@@ -4,12 +4,25 @@ import { useContext } from 'react';
 import { DataContext } from '../DataContext/DataContext';
 
 const List = () => {
-    const { todos } = useContext(DataContext)
+    const { todos, setTodos } = useContext(DataContext)
+
+    const switchComplete = id =>{
+         const newTodos = [...todos] 
+          newTodos.forEach((todo, index) => {
+            if(index === id){
+                todo.complete = !todo.complete
+            }
+         });
+         setTodos(newTodos)
+    }
+
     return (
         <ListStyled>
             {!todos.length ? <p>Please add something in the input</p> :
                 todos.map((todo, index) => (
-                    <ListItem todo={todo} key={index} id={index}/>
+                    <ListItem todo={todo} key={index} id={index}
+                        checkComplete={switchComplete} 
+                    />
                 ))
             }
         </ListStyled>

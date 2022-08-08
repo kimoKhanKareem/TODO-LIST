@@ -5,6 +5,8 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
     const [todoName, setTodoName] = useState('');
     const [todos,setTodos] = useState([]);
+
+    console.log("todo",todoName)
     
     const AddTodo = (e)=>{
         e.preventDefault();
