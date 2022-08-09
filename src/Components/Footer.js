@@ -26,7 +26,7 @@ const Footer = () => {
     return (
         <FooterStyled className="row">
             <label htmlFor="all">
-                <input type="checkbox" name="all" id="all" onClick={handleCheckAll} checked={checkAll}/>
+                <input type="checkbox" name="all" id="all" onChange={handleCheckAll} checked={checkAll}/>
                 All
                 <p>You have <span className='counterNam'>{todos.length}</span> to do</p>
             </label>
