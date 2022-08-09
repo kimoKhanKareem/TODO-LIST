@@ -15,14 +15,22 @@ const Footer = () => {
         setcheckAll(!checkAll)
     }
 
+    const deleteTodo = () =>{
+        const newTodos = todos.filter(todo => {
+            return todo.complete === false
+        })
+        setTodos(newTodos)
+        setcheckAll(false)
+    }
+
     return (
         <FooterStyled className="row">
             <label htmlFor="all">
                 <input type="checkbox" name="all" id="all" onClick={handleCheckAll} checked={checkAll}/>
                 All
-                <p>You have 0 to do</p>
+                <p>You have <span className='counterNam'>{todos.length}</span> to do</p>
             </label>
-            <button id="delete">Delete</button>
+            <button id="delete" onClick={deleteTodo}>Delete</button>
         </FooterStyled>)
 }
 //styled components
@@ -36,6 +44,9 @@ const FooterStyled = styled.footer`
         margin: 0 20px;
         p{
             margin-left: 5px;
+            .counterNam{
+                color: red;
+            }
         }
     }
     button{
